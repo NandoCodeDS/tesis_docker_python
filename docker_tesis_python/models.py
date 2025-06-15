@@ -18,3 +18,13 @@ def crear_registro(datos):
             cursor.close()
         cerrar_conexion(conexion)
         
+from sqlalchemy import Column, String
+from .database import Base
+
+class Usuario(Base):
+    __tablename__ = "usuarios"
+
+    usuario = Column(String(50), primary_key=True, index=True)
+    contraseña = Column(String(100))
+
+        
