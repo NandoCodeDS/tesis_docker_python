@@ -6,10 +6,10 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root         # Usuario root habilitado
-      MYSQL_DATABASE: mnpe             # Base de datos por defecto
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mnpe
     ports:
-      - "3307:3306"                     # Evita conflictos con MySQL del sistema
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 
@@ -21,9 +21,7 @@ services:
       - mysql
     ports:
       - "8000:8000"
-    volumes:
-      - .:/docker_tesis_python
-    command: uvicorn docker_tesis_python.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn docker_tesis_python.main:app --host 0.0.0.0 --port 8000
 
 volumes:
   mysql_data:
