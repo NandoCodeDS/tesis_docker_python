@@ -1,15 +1,17 @@
-# En usuarios.py
-from fastapi import APIRouter, HTTPException
+from fastapi import HTTPException
+from pydantic import BaseModel
 from .database import conectar, cerrar_conexion
 
-router = APIRouter()
+class Usuario(BaseModel):
+    usuario: str
+    contraseña: str
 
-    
-def log(usuario):
+def login(usuario: Usuario):
     try:
         conexion = conectar()
         cursor = conexion.cursor()
-        cursor.execute("SELECT * FROM usuarios WHERE usuario=%s", (usuario.usuario))
+        cursor.execute("SELECT * FROM usuarios WHERE usuario=%s AND contraseña=%s", 
+                       (usuario.usuario, usuario.contraseña))
         resultado = cursor.fetchone()
         if resultado:
             return {"mensaje": "Login exitoso"}
@@ -21,4 +23,3 @@ def log(usuario):
         if 'cursor' in locals():
             cursor.close()
         cerrar_conexion(conexion)
-
