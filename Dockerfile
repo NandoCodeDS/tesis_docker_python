@@ -1,7 +1,7 @@
 FROM python:3.7
 
 # Directorio de trabajo dentro del contenedor
-WORKDIR /app
+WORKDIR /docker_tesis_pythons
 
 # Copiar el contenido del código fuente
 COPY ./docker_tesis_python /app/docker_tesis_python
