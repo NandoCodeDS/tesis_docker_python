@@ -21,6 +21,12 @@ services:
       - mysql
     ports:
       - "8000:8000"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: mmpe
     volumes:
       - .:/docker_tesis_python
     command: uvicorn docker_tesis_python.main:app --host 0.0.0.0 --port 8000 --reload
