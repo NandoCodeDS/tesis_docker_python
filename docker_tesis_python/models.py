@@ -6,8 +6,11 @@ def crear_registro(datos):
         cursor = conexion.cursor()
         consulta = """
             INSERT INTO monitor (
-                voltaje, frecuencia
-            ) VALUES (%s, %s)
+                voltaje, frecuencia, va, vb, vc,
+                ia, ib, ic, pa, pb, pc,
+                qa, qb, qc, sa, sb, sc,
+                pfa, pfb, pfc, f, phia, phib, phic
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         cursor.execute(consulta, datos)
         conexion.commit()
