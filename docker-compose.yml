@@ -8,10 +8,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: mnpe
-      MYSQL_USER: root
- 
     ports:
-      - "3306:3306"
+      - "3307:3306"  # Puerto HOST:CONTENEDOR
     volumes:
       - mysql_data:/var/lib/mysql
 
