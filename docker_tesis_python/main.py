@@ -14,6 +14,6 @@ def capturar():
     datos = client.take_data_device("nodo1")
     return {"status": "Datos capturados", "datos": datos}
 
-@app.post("/login")  # <-- usa POST para enviar credenciales
-def login_user(usuario: Usuario):
-    return login(usuario)
+@app.get("/login")
+def login_message():
+    return {"message": "Aquí va el login o mensaje de login"}
