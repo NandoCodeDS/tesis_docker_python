@@ -1,7 +1,7 @@
 FROM python:3.7
 
 # Usar /app como directorio de trabajo
-WORKDIR /app
+WORKDIR /docker_tesis_python
 
 # Copiar todo el paquete al contenedor en /app
 COPY ./docker_tesis_python /app/docker_tesis_python
