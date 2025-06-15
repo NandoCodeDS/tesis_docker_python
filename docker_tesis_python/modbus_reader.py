@@ -34,11 +34,7 @@ class ConnectionModbusClient:
         frecuencia = F[0]
 
         datos = (
-            voltaje, frecuencia, V[0], V[1], V[2],
-            I[0], I[1], I[2], P[0], P[1], P[2],
-            Q[0], Q[1], Q[2], S[0], S[1], S[2],
-            PF[0], PF[1], PF[2], frecuencia,
-            Ang[0], Ang[1], Ang[2]
+            voltaje, frecuencia
         )
         crear_registro(datos)
         return datos
