@@ -15,5 +15,5 @@ def capturar():
     return {"status": "Datos capturados", "datos": datos}
 
 @app.get("/login")
-def root():
-    return {"message": "API Modbus funcionando"}
+def login_message():
+    return {"message": "Aquí va el login o mensaje de login"}
